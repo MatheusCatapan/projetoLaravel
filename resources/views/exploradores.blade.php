@@ -4,12 +4,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <h1 class="text-xl font-bold mb-4 text-center">Exploradores Cadastrados</h1>
-                    <div class="flex justify-end mb-4">
-                        <a href="{{ route('exploradores.create') }}"
-                           class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition">
-                            + Novo Explorador
-                        </a>
-                    </div>
+
                     <div class="flex justify-center">
                         <table class="min-w-full border border-gray-300">
                             <thead>
@@ -31,9 +26,27 @@
                                         <td class="border px-4 py-2">{{ $explorador->longitude }}</td>
                                     </tr>
                                 @endforeach
+                                
+                                
+
                             </tbody>
                         </table>
                     </div>
+
+                    
+
+                    <div class="pagination mt-6">
+                        {{ $exploradores->links() }}
+                    </div>
+
+                    <div class="flex justify-center mt-6";">
+                        <a href="{{ route('exploradores.create') }}"
+                           class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded transition text-base"
+                           style="min-width: 220px; text-align: center; background-color: #000000;">
+                           Cadastrar Novo Explorador
+                        </a>
+                    </div>
+
                     <style>
                         .pagination {
                             display: flex;
@@ -68,9 +81,7 @@
                             cursor: not-allowed;
                         }
                     </style>
-                    <div class="pagination">
-                        {{ $exploradores->links() }}
-                    </div>
+
                 </div>
             </div>
         </div>
