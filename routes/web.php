@@ -39,11 +39,25 @@ Route::get('/exploradores/create', [ExploradorController::class, 'create'])
     ->middleware(['auth', 'verified'])
     ->name('exploradores.create');    
 
+//Formulário de atualização (GET)
+Route::get('/exploradores/atualizar', [ExploradorController::class, 'atualizar'])
+    ->middleware(['auth', 'verified'])
+    ->name('exploradores.atualizar');
+
+// Atualizar localização (POST)
+Route::post('/exploradores/atualizar', [ExploradorController::class, 'atualizarPost'])
+    ->middleware(['auth', 'verified'])
+    ->name('exploradores.atualizar.post');
+
 //Rota de sucesso
 Route::get('/exploradores/sucesso', function () {
     return view('exploradores.sucesso');
 })->name('exploradores.sucesso');    
 
+//Rota de itens
+Route::get('/exploradores/itens', [ExploradorController::class, 'verItems'])
+    ->middleware(['auth', 'verified'])
+    ->name('exploradores.itens');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

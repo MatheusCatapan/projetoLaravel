@@ -47,6 +47,14 @@
                         </a>
                     </div>
 
+                    <div class="flex justify-center mt-6";">
+                        <a href="{{ route('exploradores.atualizar') }}"
+                           class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded transition text-base"
+                           style="min-width: 220px; text-align: center; background-color: #000000;">
+                           Atualizar Explorador
+                        </a>
+                    </div>
+
                     <style>
                         .pagination {
                             display: flex;

@@ -19,6 +19,10 @@
                     <x-nav-link :href="route('dashboard.exploradores')" :active="request()->routeIs('dashboard.users')">
                         {{ __('Exploradores') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('exploradores.itens')" :active="request()->routeIs('exploradores.itens')">
+                        {{ __('Itens') }}
+                    </x-nav-link>
                 </div>
             </div>
 
